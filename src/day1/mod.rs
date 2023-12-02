@@ -1,4 +1,4 @@
-pub fn shit(file_path: &str, answer: u32 ) -> u32 {
+pub fn solve(file_path: &str, answer: u32 ) -> u32 {
     let mut total = 0;
     if let Ok(lines) = aoc23::read_lines(file_path) {    
         // Consumes the iterator, returns an (Optional) String
