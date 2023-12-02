@@ -29,18 +29,6 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-// fn first_word(s: &String) -> &str {
-//     let bytes = s.as_bytes();
-
-//     for (i, &item) in bytes.iter().enumerate() {
-//         if item == b' ' {
-//             return &s[0..i];
-//         }
-//     }
-
-//     &s[..]
-// }
-
 pub fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 where P: AsRef<Path>, {
     let file = File::open(filename)?;
