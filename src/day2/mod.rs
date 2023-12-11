@@ -77,7 +77,7 @@ fn parse_game2(s: &str) -> u32 {
   let rounds: Vec<&str> = s.split(';').collect();
 
   for round in rounds {
-    println!("{}",round);
+    // println!("{}",round);
     let colors: Vec<&str> = round.split(", ").collect();
     for color in colors {
       let pull: Vec<&str> = color.trim().split(" ").collect();
