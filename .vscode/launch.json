@@ -59,14 +59,6 @@
             },
             "args": [],
             "cwd": "${workspaceFolder}"
-        },
-        {
-            "name": "(OSX) Launch",
-            "type": "lldb",
-            "request": "launch",
-            "program": "${workspaceRoot}/target/debug/aoc23",
-            "args": [],
-            "cwd": "${workspaceFolder}",
         }
     ]
 }
