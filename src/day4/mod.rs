@@ -76,8 +76,9 @@ pub fn solve2(file_path: &str) -> u32 {
         let mut win_set = HashSet::new();
         println!("Copy Queue: {:?}", card_copies);
         let mut copies: u32 = 1;
-        if card_copies.len() > 0 {
-          copies += card_copies.pop_front().unwrap();
+        match card_copies.pop_front() {
+          None => (),
+          Some(num) => copies += num
         }
 
         for x in (0..win_nums.len()).step_by(3) {
@@ -111,7 +112,7 @@ pub fn solve2(file_path: &str) -> u32 {
         
         for z in 0..score {
           if card_copies.len() < z+1 {
-            card_copies.push_back(1)
+            card_copies.push_back(copies)
           } else {
             card_copies[z] += copies
           }
