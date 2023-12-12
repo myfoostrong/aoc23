@@ -74,7 +74,7 @@ pub fn solve2(file_path: &str) -> u32 {
         let win_nums = &row[game_sep+1..card_sep-1];
         let card_nums = &row[card_sep+1..];
         let mut win_set = HashSet::new();
-        println!("Copy Queue: {:?}", card_copies);
+        // println!("Copy Queue: {:?}", card_copies);
         let mut copies: u32 = 1;
         match card_copies.pop_front() {
           None => (),
@@ -107,8 +107,8 @@ pub fn solve2(file_path: &str) -> u32 {
             }
           }
         }
-        println!("Score: {}",score);
-        println!("Copies: {}",copies);
+        // println!("Score: {}",score);
+        // println!("Copies: {}",copies);
         
         for z in 0..score {
           if card_copies.len() < z+1 {
@@ -118,7 +118,7 @@ pub fn solve2(file_path: &str) -> u32 {
           }
         }
         total += copies;
-        println!("Total: {}",total)
+        // println!("Total: {}",total)
       }
     }
     
