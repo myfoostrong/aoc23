@@ -6,13 +6,15 @@ pub fn solve1(file_path: &str) -> u32 {
       let grid_length = aoc23::get_file_line_size(file_path);
       // total = u32::try_from(grid_length).unwrap();
       
-      for (j, line) in lines.enumerate() {
+      for (line_num, line) in lines.enumerate() {
         if let Ok(row) = line {
           // println!("{}",row);
+          // if row.len() == 0 {
+          //   continue
+          // }
           
         }
-      }
-      
+      }      
     }
     total
 }
