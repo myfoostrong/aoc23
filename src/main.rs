@@ -1,9 +1,7 @@
-use std::env;
-use std::process;
-
 mod day1;
 mod day2;
 mod day3;
+mod day4;
 
 fn main() {    
     println!("Day 1 Answer 0: {}", day1::solve(&"./src/day1/input.txt", 0));
@@ -14,4 +12,7 @@ fn main() {
 
     println!("Day 3 Answer 0: {}", day3::solve1(&"./src/day3/input.txt"));
     println!("Day 3 Answer 1: {}", day3::solve2(&"./src/day3/input.txt"));
+
+    println!("Day 4 Answer 0: {}", day4::solve1(&"./src/day4/input.txt"));
+    println!("Day 4 Answer 1: {}", day4::solve2(&"./src/day4/input.txt"));
 }
