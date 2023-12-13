@@ -42,7 +42,7 @@ pub fn solve1(file_path: &str) -> u32 {
           let cards = game[0].to_string();
           let bid = game[1].parse::<u32>().unwrap();
           let index = get_hand_index(&cards);
-          let order = get_hand_order(&cards);
+          let order = get_hand_order1(&cards);
           let hand: Hand = Hand {cards, bid, index, order};
           println!("Hand Index: {}",index);
           hand_types[index].push(hand);
@@ -67,22 +67,66 @@ pub fn solve1(file_path: &str) -> u32 {
 }
 
 pub fn solve2(file_path: &str) -> u32 {
-    let mut total = 0;
+  let mut total = 0;
 
-    if let Ok(lines) = aoc23::read_lines(file_path) {
-      
-      let grid_length = aoc23::get_file_line_size(file_path);
-      // total = u32::try_from(grid_length).unwrap();
-      
-      for (j, line) in lines.enumerate() {
-        if let Ok(row) = line {
-          // println!("{}",row);
-          
+  if let Ok(lines) = aoc23::read_lines(file_path) {
+    let mut hand_types: [BinaryHeap<Hand>; 7] = Default::default();
+
+    let grid_length = aoc23::get_file_line_size(file_path);
+    // total = u32::try_from(grid_length).unwrap();
+    
+    for (line_num, line) in lines.enumerate() {
+      if let Ok(row) = line {
+        println!("{}",row);
+        let game: Vec<&str> = row.split(' ').collect();
+
+        let mut cards = game[0].to_string();
+        let mut card_count = HashMap::new();
+        for c in game[0].chars() {
+          match card_count.get(&c) {
+            None => {
+              card_count.insert(c, 1);
+            },
+            Some(&num) => {
+              card_count.insert(c, num+1);
+            }
+          }
         }
+        let mut great = 0;
+        let mut b = ' ';
+        for i in card_count.keys() {
+          if card_count[i] > great {
+            great = card_count[i];
+            b = *i;
+          }
+        }
+        cards = cards.replace('J', &b.to_string());
+
+        let bid = game[1].parse::<u32>().unwrap();
+
+        let index = get_hand_index(&cards);
+        let order = get_hand_order2(&cards);
+        let hand: Hand = Hand {cards, bid, index, order};
+        println!("Hand Index: {}",index);
+        hand_types[index].push(hand);
       }
-      
     }
-    total
+    hand_types.reverse();    
+    let mut count = 1;
+
+    for t in  hand_types {
+      println!("{}",t.len());
+      let mut hands = t.into_sorted_vec();
+      // hands.reverse();
+      for h in hands {
+        println!("Hand: {} Order: {} Bid: {}", h.cards, h.order, h.bid);
+        total += h.bid * count;
+        println!("Total: {}",total);
+        count +=1
+      }
+    }
+  }
+  total
 }
 
 
@@ -141,11 +185,9 @@ fn get_hand_index(hand: &str) -> usize {
   0
 }
 
-fn get_hand_order(hand: &str) -> u32 {
+fn get_hand_order1(hand: &str) -> u32 {
   let mut total = 0;
   let mut order = hand.to_string();
-  // order.to
-  
   order = order.replace('A',"E");
   order = order.replace('T',"A");
   order = order.replace('J',"B");
@@ -153,11 +195,18 @@ fn get_hand_order(hand: &str) -> u32 {
   order = order.replace('K',"D");
   println!("Order: {}",order);
   u32::from_str_radix(&order, 16).unwrap()
-  // for (i, c) in hand.chars().enumerate() {
-  //   // = get_card_val(c);
-  //   // total += get_card_val(c) * u32::pow(10, u32::try_from(i).unwrap())
-  // }
-  // total
+}
+
+fn get_hand_order2(hand: &str) -> u32 {
+  let mut total = 0;
+  let mut order = hand.to_string();
+  order = order.replace('A',"D");
+  order = order.replace('T',"A");
+  order = order.replace('J',"1");
+  order = order.replace('Q',"B");
+  order = order.replace('K',"C");
+  println!("Order: {}",order);
+  u32::from_str_radix(&order, 16).unwrap()
 }
 
 fn get_card_val(c: char) -> char {
