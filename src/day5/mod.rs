@@ -9,12 +9,12 @@ pub fn solve1(file_path: &str) -> u64 {
 
     for (line_num, line) in lines.enumerate() {
       if let Ok(row) = line {
-        println!("{}",row);
+        // println!("{}",row);
 
         // Get seeds
         if line_num == 0 {
           let seeds_str: &str = &row[6..].trim();
-          println!("Seeds string: {}", seeds_str);
+          // println!("Seeds string: {}", seeds_str);
 
           let seed_str_list: Vec<&str> = seeds_str.split(' ').collect();
           let num_seeds: usize = seed_str_list.len();            
@@ -22,7 +22,7 @@ pub fn solve1(file_path: &str) -> u64 {
           for seed_str in seed_str_list {
             match seed_str.trim().parse::<u64>() {
               Err(_) => {
-                println!("Seed String Error: {}", seed_str)
+                // println!("Seed String Error: {}", seed_str)
               },
               Ok(num) => {
                 seeds.push(num);
@@ -30,7 +30,7 @@ pub fn solve1(file_path: &str) -> u64 {
               }
             }
           }
-          println!("Seeds: {:?}", seeds);
+          // println!("Seeds: {:?}", seeds);
         }
 
         if row.len() == 0 {
@@ -40,14 +40,14 @@ pub fn solve1(file_path: &str) -> u64 {
         if line_num > 1 {
           // For map in list
           if row.ends_with("map:") {
-            println!("Seed map: {:?}", seed_map);
+            // println!("Seed map: {:?}", seed_map);
             // reset map
             continue
           }
           // For row in map
           let range: Vec<&str> = row.split(' ').collect();
           if range.len() != 3 {
-            println!("Error: Range string not parsed correctly {:?}", range);
+            // println!("Error: Range string not parsed correctly {:?}", range);
             return 0
           }
 
@@ -107,7 +107,7 @@ pub fn solve2(file_path: &str) -> u64 {
       
       for (j, line) in lines.enumerate() {
         if let Ok(row) = line {
-          // println!("{}",row);
+          // // println!("{}",row);
           
         }
       }
