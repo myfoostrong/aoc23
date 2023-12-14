@@ -37,25 +37,23 @@ fn main() {
     println!("Day 7 Answer 0: {}", day7::solve1(&"./src/day7/input.txt"));
     println!("Day 7 Answer 1: {}", day7::solve2(&"./src/day7/input.txt"));
 
-<<<<<<< HEAD
-    // println!("Day 8 Test 0: {}", day8::solve1(&"./src/day8/test.txt"));
-    // println!("Day 8 Test 1: {}", day8::solve2(&"./src/day8/test.txt"));
-    // println!("Day 8 Answer 0: {}", day8::solve1(&"./src/day8/input.txt"));
-    // println!("Day 8 Answer 1: {}", day8::solve2(&"./src/day8/input.txt"));
+    println!("Day 8 Test 0: {}", day8::solve1(&"./src/day8/test.txt"));
+    println!("Day 8 Test 1: {}", day8::solve2(&"./src/day8/test.txt"));
+    println!("Day 8 Answer 0: {}", day8::solve1(&"./src/day8/input.txt"));
+    println!("Day 8 Answer 1: {}", day8::solve2(&"./src/day8/input.txt"));
 
-    // println!("Day 9 Test 0: {}", day9::solve1(&"./src/day9/test.txt"));
-    // println!("Day 9 Test 1: {}", day9::solve2(&"./src/day9/test.txt"));
-    // println!("Day 9 Answer 0: {}", day9::solve1(&"./src/day9/input.txt"));
-    // println!("Day 9 Answer 1: {}", day9::solve2(&"./src/day9/input.txt"));
+    println!("Day 9 Test 0: {}", day9::solve1(&"./src/day9/test.txt"));
+    println!("Day 9 Test 1: {}", day9::solve2(&"./src/day9/test.txt"));
+    println!("Day 9 Answer 0: {}", day9::solve1(&"./src/day9/input.txt"));
+    println!("Day 9 Answer 1: {}", day9::solve2(&"./src/day9/input.txt"));
 
     println!("Day 10 Test 0: {}", day10::solve1(&"./src/day10/test.txt"));
-    // println!("Day 10 Test 1: {}", day10::solve2(&"./src/day10/test.txt"));
-    // println!("Day 10 Answer 0: {}", day10::solve1(&"./src/day10/input.txt"));
-    // println!("Day 10 Answer 1: {}", day10::solve2(&"./src/day10/input.txt"));
-=======
+    println!("Day 10 Test 1: {}", day10::solve2(&"./src/day10/test.txt"));
+    println!("Day 10 Answer 0: {}", day10::solve1(&"./src/day10/input.txt"));
+    println!("Day 10 Answer 1: {}", day10::solve2(&"./src/day10/input.txt"));
+
     println!("Day 8 Test 0: {}", day8::solve1(&"./src/day8/test.txt"));
     println!("Day 8 Test 1: {}", day8::solve2(&"./src/day8/test2.txt"));
     println!("Day 8 Answer 0: {}", day8::solve1(&"./src/day8/input.txt"));
     println!("Day 8 Answer 1: {}", day8::solve2(&"./src/day8/input.txt"));
->>>>>>> ae0f5b3b54738b6a48ced23b8c9b0554467805d5
 }
