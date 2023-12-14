@@ -19,7 +19,7 @@ pub fn solve1(file_path: &str) -> u64 {
       }
 
       if times.len() != records.len() {
-        println!("Error: Data Mismatch!");
+        // println!("Error: Data Mismatch!");
         return 0
       }
 
@@ -57,12 +57,12 @@ pub fn solve2(file_path: &str) -> u64 {
     }
 
     if times.len() != records.len() {
-      println!("Error: Data Mismatch!");
+      // println!("Error: Data Mismatch!");
       return 0
     }
     
-    println!("{}",times.join("").to_string());
-    println!("{}",records.join("").to_string());
+    // println!("{}",times.join("").to_string());
+    // println!("{}",records.join("").to_string());
     let time = times.join("").to_string().parse::<u64>().unwrap();
     let record = records.join("").to_string().parse::<u64>().unwrap();
     for j in 0..time {
