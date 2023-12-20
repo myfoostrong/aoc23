@@ -47,7 +47,7 @@ pub fn solve1(file_path: &str) -> usize {
         possible_pipes.push(start.west().unwrap());
       }
       let mut pipe_loop: Vec<Coord> = Vec::new();
-      
+      let mut looped = false;
       'start_loop: for pipe in possible_pipes {
         pipe_loop = vec![start, pipe];
         let mut current_pipe: Coord = pipe;
@@ -60,7 +60,8 @@ pub fn solve1(file_path: &str) -> usize {
         // }
         while let Ok(next_pipe) = next_pipe(&grid, current_pipe, last_pipe) {
           if next_pipe == start {
-            break 'start_loop 
+            looped = true;
+            break 
           }
           pipe_loop.push(next_pipe);
           last_pipe = current_pipe;
@@ -68,7 +69,9 @@ pub fn solve1(file_path: &str) -> usize {
         }
       }
       // let farthest = (f64::from(pipe_loop.len()) / 2_f32).floor() as u32;
-      total = pipe_loop.len() / 2;
+      if looped {
+        total = pipe_loop.len() / 2;
+      }
     }
     total
 }

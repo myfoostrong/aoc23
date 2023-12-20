@@ -8,6 +8,7 @@
 // mod day8;
 // mod day9;
 mod day10;
+mod day14;
 
 fn main() {    
     // println!("Day 1 Answer 0: {}", day1::solve(&"./src/day1/input.txt", 0));
@@ -47,11 +48,11 @@ fn main() {
     // println!("Day 9 Answer 0: {}", day9::solve1(&"./src/day9/input.txt"));
     // println!("Day 9 Answer 1: {}", day9::solve2(&"./src/day9/input.txt"));
 
-    println!("Day 10 Test 0: {}", day10::solve1(&"./src/day10/test1.txt"));
-    println!("Day 10 Test 0: {}", day10::solve1(&"./src/day10/test2.txt"));
-    println!("Day 10 Test 0: {}", day10::solve1(&"./src/day10/test3.txt"));
-    println!("Day 10 Answer 0: {}", day10::solve1(&"./src/day10/input.txt"));
-    //670 too low
+    // println!("Day 10 Test 0: {}", day10::solve1(&"./src/day10/test1.txt"));
+    // println!("Day 10 Test 0: {}", day10::solve1(&"./src/day10/test2.txt"));
+    // println!("Day 10 Test 0: {}", day10::solve1(&"./src/day10/test3.txt"));
+    // println!("Day 10 Answer 0: {}", day10::solve1(&"./src/day10/input.txt"));
+    //6770 too low
     // println!("Day 10 Test 1: {}", day10::solve2(&"./src/day10/test.txt"));
     // println!("Day 10 Answer 1: {}", day10::solve2(&"./src/day10/input.txt"));
 
@@ -59,4 +60,9 @@ fn main() {
     // println!("Day 11 Test 1: {}", day11::solve2(&"./src/day11/test2.txt"));
     // println!("Day 11 Answer 0: {}", day11::solve1(&"./src/day11/input.txt"));
     // println!("Day 11 Answer 1: {}", day11::solve2(&"./src/day11/input.txt"));
+
+    // println!("Day 14 Test 0: {}", day14::solve1(&"./src/day14/test.txt"));
+    // println!("Day 14 Answer 0: {}", day14::solve1(&"./src/day14/input.txt"));
+    // println!("Day 14 Test 1: {}", day14::solve2(&"./src/day14/test.txt"));
+    println!("Day 14 Answer 1: {}", day14::solve2(&"./src/day14/input.txt"));
 }

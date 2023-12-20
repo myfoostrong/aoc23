@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 multiarray = "0.1.3"
+ndarray = "0.15.6"
