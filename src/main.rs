@@ -9,6 +9,7 @@
 // mod day9;
 mod day10;
 mod day14;
+mod day20;
 
 fn main() {    
     // println!("Day 1 Answer 0: {}", day1::solve(&"./src/day1/input.txt", 0));
@@ -64,5 +65,12 @@ fn main() {
     // println!("Day 14 Test 0: {}", day14::solve1(&"./src/day14/test.txt"));
     // println!("Day 14 Answer 0: {}", day14::solve1(&"./src/day14/input.txt"));
     // println!("Day 14 Test 1: {}", day14::solve2(&"./src/day14/test.txt"));
-    println!("Day 14 Answer 1: {}", day14::solve2(&"./src/day14/input.txt"));
+    // println!("Day 14 Answer 1: {}", day14::solve2(&"./src/day14/input.txt"));
+
+    println!("Day 20 Test 0: {}", day20::solve1(&"./src/day20/test.txt"));
+    // println!("Day 20 Test 0: {}", day20::solve1(&"./src/day20/test2.txt"));
+    // println!("Day 20 Answer 0: {}", day20::solve1(&"./src/day20/input.txt"));
+    // println!("Day 20 Test 1: {}", day20::solve2(&"./src/day20/test.txt"));
+    // println!("Day 20 Test 1: {}", day20::solve2(&"./src/day20/test2.txt"));
+    // println!("Day 20 Answer 1: {}", day20::solve2(&"./src/day20/input.txt"));
 }
