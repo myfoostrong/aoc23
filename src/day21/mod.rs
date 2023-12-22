@@ -40,9 +40,11 @@ pub fn solve1(file_path: &str, min_steps: usize) -> usize {
       let (mut grid, start) = build_grid(lines, grid_length); 
       let mut tracker: HashSet<Coord> = HashSet::new();
       let mut options = get_options(start, &grid);
+      let x: Vec<bool> = options.iter().map(|c| tracker.insert(*c)).collect();
       for step in 0..min_steps-1 {
+        options = tracker.iter().map(|curr| get_options(*curr, &grid)).flatten().collect();
+        tracker = HashSet::new();
         let x: Vec<bool> = options.iter().map(|c| tracker.insert(*c)).collect();
-        options = options.iter().map(|curr| get_options(*curr, &grid)).flatten().collect();
         // if tracker.len() > min_steps {
         //   break;
         // }
@@ -52,7 +54,7 @@ pub fn solve1(file_path: &str, min_steps: usize) -> usize {
           
       //   }
       // }
-      total = options.len();      
+      total = tracker.len();      
     }
     total
 }
@@ -76,23 +78,27 @@ fn build_grid(lines: std::io::Lines<BufReader<File>>, grid_length: usize) -> (Ar
 fn get_options(curr: Coord, grid: &Array2::<char>) -> Vec<Coord> {
   let mut opts: Vec<Coord> = Vec::new();
   if let Ok(n) = curr.north() {
-    if grid[[n.x,n.y]] == '.' {
-      opts.push(n)
+    match grid[[n.x,n.y]] {
+      '.' | 'S' => opts.push(n),
+      _ => {}
     }
   }
-  if let Ok(c) = curr.south() {
-    if grid[[c.x,c.y]] == '.' {
-      opts.push(c)
+  if let Ok(n) = curr.south() {
+    match grid[[n.x,n.y]] {
+      '.' | 'S' => opts.push(n),
+      _ => {}
     }
   }
   if let Ok(n) = curr.east() {
-    if grid[[n.x,n.y]] == '.' {
-      opts.push(n)
+    match grid[[n.x,n.y]] {
+      '.' | 'S' => opts.push(n),
+      _ => {}
     }
   }
   if let Ok(n) = curr.west() {
-    if grid[[n.x,n.y]] == '.' {
-      opts.push(n)
+    match grid[[n.x,n.y]] {
+      '.' | 'S' => opts.push(n),
+      _ => {}
     }
   }
   opts

@@ -76,9 +76,8 @@ fn main() {
     // println!("Day 20 Answer 1: {}", day20::solve2(&"./src/day20/input.txt"));
 
     println!("Day 21 Test 0: {}", day21::solve1(&"./src/day21/test.txt", 6));
-    // println!("Day 21 Test 0: {}", day21::solve1(&"./src/day21/test2.txt"));
-    // println!("Day 21 Answer 0: {}", day21::solve1(&"./src/day21/input.txt"));
+    println!("Day 21 Answer 0: {}", day21::solve1(&"./src/day21/input.txt", 64));
     // println!("Day 21 Test 1: {}", day21::solve2(&"./src/day21/test.txt"));
     // println!("Day 21 Test 1: {}", day21::solve2(&"./src/day21/test2.txt"));
-    // println!("Day 21 Answer 1: {}", day21::solve2(&"./src/day21/input.txt"));
+    println!("Day 21 Answer 1: {}", day21::solve2(&"./src/day21/input.txt", 26501365));
 }
